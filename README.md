@@ -4,6 +4,10 @@ Disaster Response Pipeline is the part of Udacity Nanodegree. In this project, w
 
 Finally, this project contains a web app where you can input a message and get classification results.
 
+## Structure Of The Project
+
+Tis project contains three folders mainly (app, models, data) and its working is shown in the figure mentioned below.
+
 <img width="846" alt="web_app" src="https://user-images.githubusercontent.com/81413089/126498350-00ff3f43-2034-44b0-925b-e023e85c5ac0.PNG">
      
 <img width="582" alt="Process_steps" src="https://user-images.githubusercontent.com/81413089/126501541-a538ce48-21ce-4942-bf4f-addd1cb8edd0.PNG">
