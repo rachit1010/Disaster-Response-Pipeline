@@ -44,6 +44,6 @@ Many thanks to Figure-8 for making this available to Udacity for training purpos
 Feel free to utilize the contents of this while citing me, udacity, and/or figure-8 accordingly.
 
 #### Notice : Some codes are picked from stackoverflow data.
-#### Click [here](https://github.com/rachit1010/Udacity_Projects/blob/main/README.md#results) to check repository.
+#### Click [here](https://github.com/rachit1010/Disaster-Response-Pipeline) to check repository.
 
 
