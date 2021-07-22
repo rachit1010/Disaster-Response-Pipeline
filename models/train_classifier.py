@@ -1,351 +1,267 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 5,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Loading data from -f ...\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "[nltk_data] Downloading package punkt to\n",
-      "[nltk_data]     C:\\Users\\user\\AppData\\Roaming\\nltk_data...\n",
-      "[nltk_data]   Package punkt is already up-to-date!\n",
-      "[nltk_data] Downloading package wordnet to\n",
-      "[nltk_data]     C:\\Users\\user\\AppData\\Roaming\\nltk_data...\n",
-      "[nltk_data]   Package wordnet is already up-to-date!\n",
-      "[nltk_data] Downloading package averaged_perceptron_tagger to\n",
-      "[nltk_data]     C:\\Users\\user\\AppData\\Roaming\\nltk_data...\n",
-      "[nltk_data]   Package averaged_perceptron_tagger is already up-to-\n",
-      "[nltk_data]       date!\n"
-     ]
-    },
-    {
-     "ename": "ValueError",
-     "evalue": "Table -f_table not found",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mInvalidRequestError\u001b[0m                       Traceback (most recent call last)",
-      "\u001b[1;32m~\\anaconda3\\lib\\site-packages\\pandas\\io\\sql.py\u001b[0m in \u001b[0;36mread_sql_table\u001b[1;34m(table_name, con, schema, index_col, coerce_float, parse_dates, columns, chunksize)\u001b[0m\n\u001b[0;32m    268\u001b[0m     \u001b[1;32mtry\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 269\u001b[1;33m         \u001b[0mmeta\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mreflect\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0monly\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;33m[\u001b[0m\u001b[0mtable_name\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mviews\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mTrue\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    270\u001b[0m     \u001b[1;32mexcept\u001b[0m \u001b[0msqlalchemy\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexc\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mInvalidRequestError\u001b[0m \u001b[1;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m~\\anaconda3\\lib\\site-packages\\sqlalchemy\\sql\\schema.py\u001b[0m in \u001b[0;36mreflect\u001b[1;34m(self, bind, schema, views, only, extend_existing, autoload_replace, resolve_fks, **dialect_kwargs)\u001b[0m\n\u001b[0;32m   4498\u001b[0m                     \u001b[0ms\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mschema\u001b[0m \u001b[1;32mand\u001b[0m \u001b[1;33m(\u001b[0m\u001b[1;34m\" schema '%s'\"\u001b[0m \u001b[1;33m%\u001b[0m \u001b[0mschema\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;32mor\u001b[0m \u001b[1;34m\"\"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 4499\u001b[1;33m                     raise exc.InvalidRequestError(\n\u001b[0m\u001b[0;32m   4500\u001b[0m                         \u001b[1;34m\"Could not reflect: requested table(s) not available \"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mInvalidRequestError\u001b[0m: Could not reflect: requested table(s) not available in Engine(sqlite:///-f): (-f_table)",
-      "\nThe above exception was the direct cause of the following exception:\n",
-      "\u001b[1;31mValueError\u001b[0m                                Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-5-f95e5c039643>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m    278\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    279\u001b[0m \u001b[1;32mif\u001b[0m \u001b[0m__name__\u001b[0m \u001b[1;33m==\u001b[0m \u001b[1;34m'__main__'\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 280\u001b[1;33m     \u001b[0mmain\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[1;32m<ipython-input-5-f95e5c039643>\u001b[0m in \u001b[0;36mmain\u001b[1;34m()\u001b[0m\n\u001b[0;32m    253\u001b[0m         \u001b[0mdatabase_filepath\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mpickle_filepath\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0msys\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0margv\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m1\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    254\u001b[0m         \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'Loading data from {} ...'\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mformat\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mdatabase_filepath\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 255\u001b[1;33m         \u001b[0mX\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mY\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcategory_names\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mload_data_from_db\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mdatabase_filepath\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    256\u001b[0m         \u001b[0mX_train\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mX_test\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mY_train\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mY_test\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mtrain_test_split\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mX\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mY\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mtest_size\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;36m0.2\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    257\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m<ipython-input-5-f95e5c039643>\u001b[0m in \u001b[0;36mload_data_from_db\u001b[1;34m(database_filepath)\u001b[0m\n\u001b[0;32m     56\u001b[0m     \u001b[0mengine\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mcreate_engine\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'sqlite:///'\u001b[0m \u001b[1;33m+\u001b[0m \u001b[0mdatabase_filepath\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     57\u001b[0m     \u001b[0mtable_name\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mos\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mpath\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mbasename\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mdatabase_filepath\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mreplace\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\".db\"\u001b[0m\u001b[1;33m,\u001b[0m\u001b[1;34m\"\"\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;33m+\u001b[0m \u001b[1;34m\"_table\"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m---> 58\u001b[1;33m     \u001b[0mdf\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mread_sql_table\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mtable_name\u001b[0m\u001b[1;33m,\u001b[0m\u001b[0mengine\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m     59\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     60\u001b[0m     \u001b[1;31m#Remove child alone as it has all zeros only\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m~\\anaconda3\\lib\\site-packages\\pandas\\io\\sql.py\u001b[0m in \u001b[0;36mread_sql_table\u001b[1;34m(table_name, con, schema, index_col, coerce_float, parse_dates, columns, chunksize)\u001b[0m\n\u001b[0;32m    269\u001b[0m         \u001b[0mmeta\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mreflect\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0monly\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;33m[\u001b[0m\u001b[0mtable_name\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mviews\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mTrue\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    270\u001b[0m     \u001b[1;32mexcept\u001b[0m \u001b[0msqlalchemy\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexc\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mInvalidRequestError\u001b[0m \u001b[1;32mas\u001b[0m \u001b[0merr\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 271\u001b[1;33m         \u001b[1;32mraise\u001b[0m \u001b[0mValueError\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34mf\"Table {table_name} not found\"\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;32mfrom\u001b[0m \u001b[0merr\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    272\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    273\u001b[0m     \u001b[0mpandas_sql\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mSQLDatabase\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mcon\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mmeta\u001b[0m\u001b[1;33m=\u001b[0m\u001b[0mmeta\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mValueError\u001b[0m: Table -f_table not found"
-     ]
-    }
-   ],
-   "source": [
-    "\"\"\"\n",
-    "Classifier Trainer\n",
-    "Project: Disaster Response Pipeline (Udacity - Data Science Nanodegree)\n",
-    "Sample Script Syntax:\n",
-    "> python train_classifier.py <path to sqllite  destination db> <path to the pickle file>\n",
-    "Sample Script Execution:\n",
-    "> python train_classifier.py ../data/disaster_response_db.db classifier.pkl\n",
-    "Arguments:\n",
-    "    1) Path to SQLite destination database (e.g. disaster_response_db.db)\n",
-    "    2) Path to pickle file name where ML model needs to be saved (e.g. classifier.pkl)\n",
-    "\"\"\"\n",
-    "\n",
-    "# import libraries\n",
-    "import nltk\n",
-    "nltk.download('punkt')\n",
-    "nltk.download('wordnet')\n",
-    "nltk.download('averaged_perceptron_tagger')\n",
-    "\n",
-    "# import libraries\n",
-    "import numpy as np\n",
-    "import pandas as pd\n",
-    "pd.set_option('display.max_columns', 500)\n",
-    "\n",
-    "import sys\n",
-    "import os\n",
-    "import re\n",
-    "from sqlalchemy import create_engine\n",
-    "import pickle\n",
-    "\n",
-    "from scipy.stats import gmean\n",
-    "# import relevant functions/modules from the sklearn\n",
-    "from sklearn.pipeline import Pipeline, FeatureUnion\n",
-    "from sklearn.model_selection import train_test_split\n",
-    "from sklearn.metrics import classification_report\n",
-    "from sklearn.metrics import confusion_matrix\n",
-    "from sklearn.metrics import fbeta_score, make_scorer\n",
-    "from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, AdaBoostClassifier\n",
-    "from sklearn.model_selection import GridSearchCV\n",
-    "from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer\n",
-    "from sklearn.multioutput import MultiOutputClassifier\n",
-    "from sklearn.base import BaseEstimator,TransformerMixin\n",
-    "\n",
-    "\n",
-    "def load_data_from_db(database_filepath):\n",
-    "    \"\"\"\n",
-    "    Load Data from the Database Function\n",
-    "    \n",
-    "    Arguments:\n",
-    "        database_filepath -> Path to SQLite destination database (e.g. disaster_response_db.db)\n",
-    "    Output:\n",
-    "        X -> a dataframe containing features\n",
-    "        Y -> a dataframe containing labels\n",
-    "        category_names -> List of categories name\n",
-    "    \"\"\"\n",
-    "    \n",
-    "    engine = create_engine('sqlite:///' + database_filepath)\n",
-    "    table_name = os.path.basename(database_filepath).replace(\".db\",\"\") + \"_table\"\n",
-    "    df = pd.read_sql_table(table_name,engine)\n",
-    "    \n",
-    "    #Remove child alone as it has all zeros only\n",
-    "    df = df.drop(['child_alone'],axis=1)\n",
-    "    \n",
-    "    # Given value 2 in the related field are neglible so it could be error. Replacing 2 with 1 to consider it a valid response.\n",
-    "    # Alternatively, we could have assumed it to be 0 also. In the absence of information I have gone with majority class.\n",
-    "    df['related']=df['related'].map(lambda x: 1 if x == 2 else x)\n",
-    "    \n",
-    "    X = df['message']\n",
-    "    y = df.iloc[:,4:]\n",
-    "    \n",
-    "    #print(X)\n",
-    "    #print(y.columns)\n",
-    "    category_names = y.columns # This will be used for visualization purpose\n",
-    "    return X, y, category_names\n",
-    "\n",
-    "\n",
-    "def tokenize(text,url_place_holder_string=\"urlplaceholder\"):\n",
-    "    \"\"\"\n",
-    "    Tokenize the text function\n",
-    "    \n",
-    "    Arguments:\n",
-    "        text -> Text message which needs to be tokenized\n",
-    "    Output:\n",
-    "        clean_tokens -> List of tokens extracted from the provided text\n",
-    "    \"\"\"\n",
-    "    \n",
-    "    # Replace all urls with a urlplaceholder string\n",
-    "    url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'\n",
-    "    \n",
-    "    # Extract all the urls from the provided text \n",
-    "    detected_urls = re.findall(url_regex, text)\n",
-    "    \n",
-    "    # Replace url with a url placeholder string\n",
-    "    for detected_url in detected_urls:\n",
-    "        text = text.replace(detected_url, url_place_holder_string)\n",
-    "\n",
-    "    # Extract the word tokens from the provided text\n",
-    "    tokens = nltk.word_tokenize(text)\n",
-    "    \n",
-    "    #Lemmanitizer to remove inflectional and derivationally related forms of a word\n",
-    "    lemmatizer = nltk.WordNetLemmatizer()\n",
-    "\n",
-    "    # List of clean tokens\n",
-    "    clean_tokens = [lemmatizer.lemmatize(w).lower().strip() for w in tokens]\n",
-    "    return clean_tokens\n",
-    "\n",
-    "# Build a custom transformer which will extract the starting verb of a sentence\n",
-    "class StartingVerbExtractor(BaseEstimator, TransformerMixin):\n",
-    "    \"\"\"\n",
-    "    Starting Verb Extractor class\n",
-    "    \n",
-    "    This class extract the starting verb of a sentence,\n",
-    "    creating a new feature for the ML classifier\n",
-    "    \"\"\"\n",
-    "\n",
-    "    def starting_verb(self, text):\n",
-    "        sentence_list = nltk.sent_tokenize(text)\n",
-    "        for sentence in sentence_list:\n",
-    "            pos_tags = nltk.pos_tag(tokenize(sentence))\n",
-    "            first_word, first_tag = pos_tags[0]\n",
-    "            if first_tag in ['VB', 'VBP'] or first_word == 'RT':\n",
-    "                return True\n",
-    "        return False\n",
-    "\n",
-    "    # Given it is a tranformer we can return the self \n",
-    "    def fit(self, X, y=None):\n",
-    "        return self\n",
-    "\n",
-    "    def transform(self, X):\n",
-    "        X_tagged = pd.Series(X).apply(self.starting_verb)\n",
-    "        return pd.DataFrame(X_tagged)\n",
-    "\n",
-    "def build_pipeline():\n",
-    "    \"\"\"\n",
-    "    Build Pipeline function\n",
-    "    \n",
-    "    Output:\n",
-    "        A Scikit ML Pipeline that process text messages and apply a classifier.\n",
-    "        \n",
-    "    \"\"\"\n",
-    "    pipeline = Pipeline([\n",
-    "        ('features', FeatureUnion([\n",
-    "\n",
-    "            ('text_pipeline', Pipeline([\n",
-    "                ('count_vectorizer', CountVectorizer(tokenizer=tokenize)),\n",
-    "                ('tfidf_transformer', TfidfTransformer())\n",
-    "            ])),\n",
-    "\n",
-    "            ('starting_verb_transformer', StartingVerbExtractor())\n",
-    "        ])),\n",
-    "\n",
-    "        ('classifier', MultiOutputClassifier(AdaBoostClassifier()))\n",
-    "    ])\n",
-    "\n",
-    "    return pipeline\n",
-    "\n",
-    "def multioutput_fscore(y_true,y_pred,beta=1):\n",
-    "    \"\"\"\n",
-    "    MultiOutput Fscore\n",
-    "    \n",
-    "    This is a performance metric of my own creation.\n",
-    "    It is a sort of geometric mean of the fbeta_score, computed on each label.\n",
-    "    \n",
-    "    It is compatible with multi-label and multi-class problems.\n",
-    "    It features some peculiarities (geometric mean, 100% removal...) to exclude\n",
-    "    trivial solutions and deliberatly under-estimate a stangd fbeta_score average.\n",
-    "    The aim is avoiding issues when dealing with multi-class/multi-label imbalanced cases.\n",
-    "    \n",
-    "    It can be used as scorer for GridSearchCV:\n",
-    "        scorer = make_scorer(multioutput_fscore,beta=1)\n",
-    "        \n",
-    "    Arguments:\n",
-    "        y_true -> List of labels\n",
-    "        y_prod -> List of predictions\n",
-    "        beta -> Beta value to be used to calculate fscore metric\n",
-    "    \n",
-    "    Output:\n",
-    "        f1score -> Calculation geometric mean of fscore\n",
-    "    \"\"\"\n",
-    "    \n",
-    "    # If provided y predictions is a dataframe then extract the values from that\n",
-    "    if isinstance(y_pred, pd.DataFrame) == True:\n",
-    "        y_pred = y_pred.values\n",
-    "    \n",
-    "    # If provided y actuals is a dataframe then extract the values from that\n",
-    "    if isinstance(y_true, pd.DataFrame) == True:\n",
-    "        y_true = y_true.values\n",
-    "    \n",
-    "    f1score_list = []\n",
-    "    for column in range(0,y_true.shape[1]):\n",
-    "        score = fbeta_score(y_true[:,column],y_pred[:,column],beta,average='weighted')\n",
-    "        f1score_list.append(score)\n",
-    "        \n",
-    "    f1score = np.asarray(f1score_list)\n",
-    "    f1score = f1score[f1score<1]\n",
-    "    \n",
-    "    # Get the geometric mean of f1score\n",
-    "    f1score = gmean(f1score)\n",
-    "    return f1score\n",
-    "\n",
-    "def evaluate_pipeline(pipeline, X_test, Y_test, category_names):\n",
-    "    \"\"\"\n",
-    "    Evaluate Model function\n",
-    "    \n",
-    "    This function applies a ML pipeline to a test set and prints out the model performance (accuracy and f1score)\n",
-    "    \n",
-    "    Arguments:\n",
-    "        pipeline -> A valid scikit ML Pipeline\n",
-    "        X_test -> Test features\n",
-    "        Y_test -> Test labels\n",
-    "        category_names -> label names (multi-output)\n",
-    "    \"\"\"\n",
-    "    Y_pred = pipeline.predict(X_test)\n",
-    "    \n",
-    "    multi_f1 = multioutput_fscore(Y_test,Y_pred, beta = 1)\n",
-    "    overall_accuracy = (Y_pred == Y_test).mean().mean()\n",
-    "\n",
-    "    print('Average overall accuracy {0:.2f}%'.format(overall_accuracy*100))\n",
-    "    print('F1 score (custom definition) {0:.2f}%'.format(multi_f1*100))\n",
-    "\n",
-    "    # Print the whole classification report.\n",
-    "    Y_pred = pd.DataFrame(Y_pred, columns = Y_test.columns)\n",
-    "    \n",
-    "    for column in Y_test.columns:\n",
-    "        print('Model Performance with Category: {}'.format(column))\n",
-    "        print(classification_report(Y_test[column],Y_pred[column]))\n",
-    "\n",
-    "\n",
-    "def save_model_as_pickle(pipeline, pickle_filepath):\n",
-    "    \"\"\"\n",
-    "    Save Pipeline function\n",
-    "    \n",
-    "    This function saves trained model as Pickle file, to be loaded later.\n",
-    "    \n",
-    "    Arguments:\n",
-    "        pipeline -> GridSearchCV or Scikit Pipelin object\n",
-    "        pickle_filepath -> destination path to save .pkl file\n",
-    "    \n",
-    "    \"\"\"\n",
-    "    pickle.dump(pipeline, open(pickle_filepath, 'wb'))\n",
-    "\n",
-    "def main():\n",
-    "    \"\"\"\n",
-    "    Train Classifier Main function\n",
-    "    \n",
-    "    This function applies the Machine Learning Pipeline:\n",
-    "        1) Extract data from SQLite db\n",
-    "        2) Train ML model on training set\n",
-    "        3) Estimate model performance on test set\n",
-    "        4) Save trained model as Pickle\n",
-    "    \n",
-    "    \"\"\"\n",
-    "    if len(sys.argv) == 3:\n",
-    "        database_filepath, pickle_filepath = sys.argv[1:]\n",
-    "        print('Loading data from {} ...'.format(database_filepath))\n",
-    "        X, Y, category_names = load_data_from_db(database_filepath)\n",
-    "        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)\n",
-    "        \n",
-    "        print('Building the pipeline ...')\n",
-    "        pipeline = build_pipeline()\n",
-    "        \n",
-    "        print('Training the pipeline ...')\n",
-    "        pipeline.fit(X_train, Y_train)\n",
-    "        \n",
-    "        print('Evaluating model...')\n",
-    "        evaluate_pipeline(pipeline, X_test, Y_test, category_names)\n",
-    "\n",
-    "        print('Saving pipeline to {} ...'.format(pickle_filepath))\n",
-    "        save_model_as_pickle(pipeline, pickle_filepath)\n",
-    "\n",
-    "        print('Trained model saved!')\n",
-    "\n",
-    "    else:\n",
-    "         print(\"Please provide the arguments correctly: \\nSample Script Execution:\\n\\\n",
-    "> python train_classifier.py ../data/disaster_response_db.db classifier.pkl \\n\\\n",
-    "Arguments Description: \\n\\\n",
-    "1) Path to SQLite destination database (e.g. disaster_response_db.db)\\n\\\n",
-    "2) Path to pickle file name where ML model needs to be saved (e.g. classifier.pkl\")\n",
-    "\n",
-    "if __name__ == '__main__':\n",
-    "    main()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
-   "name": "python3"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
+# import libraries
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+import numpy as np
+import pandas as pd
+pd.set_option('display.max_columns', 500)
+
+import sys
+import os
+import re
+from sqlalchemy import create_engine
+import pickle
+
+from scipy.stats import gmean
+
+# import relevant functions/modules from the sklearn
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import fbeta_score, make_scorer
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, AdaBoostClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.base import BaseEstimator,TransformerMixin
+
+
+def load_data(database_filepath):
+    """
+    Load Data from the Database Function
+    
+    Arguments:
+        database_filepath -> Path to SQLite destination database (e.g. disaster_response_db.db)
+    Output:
+        X -> a dataframe containing features
+        Y -> a dataframe containing labels
+        category_names -> List of categories name
+    """
+    
+    engine = create_engine('sqlite:///' + database_filepath)
+    table_name = os.path.basename(database_filepath).replace(".db","") + "_table"
+    df = pd.read_sql_table(table_name,engine)
+    
+    #Remove child alone as it has all zeros only
+    df = df.drop(['child_alone'],axis=1)
+    
+    # Given value 2 in the related field are neglible so it could be error. Replacing 2 with 1 to consider it a valid response.
+    # Alternatively, we could have assumed it to be 0 also. In the absence of information I have gone with majority class.
+    df['related']=df['related'].map(lambda x: 1 if x == 2 else x)
+    
+    X = df['message']
+    y = df.iloc[:,4:]
+    
+    #print(X)
+    #print(y.columns)
+    category_names = y.columns # This will be used for visualization purpose
+    return X, y, category_names
+
+
+def tokenize(text,url_place_holder_string="urlplaceholder"):
+    """
+    Tokenize the text function
+    
+    Arguments:
+        text -> Text message which needs to be tokenized
+    Output:
+        clean_tokens -> List of tokens extracted from the provided text
+    """
+    
+    # Replace all urls with a urlplaceholder string
+    url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    
+    # Extract all the urls from the provided text 
+    detected_urls = re.findall(url_regex, text)
+    
+    # Replace url with a url placeholder string
+    for detected_url in detected_urls:
+        text = text.replace(detected_url, url_place_holder_string)
+
+    # Extract the word tokens from the provided text
+    tokens = nltk.word_tokenize(text)
+    
+    #Lemmanitizer to remove inflectional and derivationally related forms of a word
+    lemmatizer = nltk.WordNetLemmatizer()
+
+    # List of clean tokens
+    clean_tokens = [lemmatizer.lemmatize(w).lower().strip() for w in tokens]
+    return clean_tokens
+
+# Build a custom transformer which will extract the starting verb of a sentence
+class StartingVerbExtractor(BaseEstimator, TransformerMixin):
+    """
+    Starting Verb Extractor class
+    
+    This class extract the starting verb of a sentence,
+    creating a new feature for the ML classifier
+    """
+
+    def starting_verb(self, text):
+        sentence_list = nltk.sent_tokenize(text)
+        for sentence in sentence_list:
+            pos_tags = nltk.pos_tag(tokenize(sentence))
+            first_word, first_tag = pos_tags[0]
+            if first_tag in ['VB', 'VBP'] or first_word == 'RT':
+                return True
+        return False
+
+    # Given it is a tranformer we can return the self 
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        X_tagged = pd.Series(X).apply(self.starting_verb)
+        return pd.DataFrame(X_tagged)
+
+def build_pipeline():
+    """
+    Build Pipeline function
+    
+    Output:
+        A Scikit ML Pipeline that process text messages and apply a classifier.
+        
+    """
+    pipeline = Pipeline([
+        ('features', FeatureUnion([
+
+            ('text_pipeline', Pipeline([
+                ('count_vectorizer', CountVectorizer(tokenizer=tokenize)),
+                ('tfidf_transformer', TfidfTransformer())
+            ])),
+
+            ('starting_verb_transformer', StartingVerbExtractor())
+        ])),
+
+        ('classifier', MultiOutputClassifier(AdaBoostClassifier()))
+    ])
+
+    return pipeline
+
+def multioutput_fscore(y_true,y_pred,beta=1):
+    """
+    MultiOutput Fscore
+    
+    This is a performance metric of my own creation.
+    It is a sort of geometric mean of the fbeta_score, computed on each label.
+    
+    It is compatible with multi-label and multi-class problems.
+    It features some peculiarities (geometric mean, 100% removal...) to exclude
+    trivial solutions and deliberatly under-estimate a stangd fbeta_score average.
+    The aim is avoiding issues when dealing with multi-class/multi-label imbalanced cases.
+    
+    It can be used as scorer for GridSearchCV:
+        scorer = make_scorer(multioutput_fscore,beta=1)
+        
+    Arguments:
+        y_true -> List of labels
+        y_prod -> List of predictions
+        beta -> Beta value to be used to calculate fscore metric
+    
+    Output:
+        f1score -> Calculation geometric mean of fscore
+    """
+    
+    # If provided y predictions is a dataframe then extract the values from that
+    if isinstance(y_pred, pd.DataFrame) == True:
+        y_pred = y_pred.values
+    
+    # If provided y actuals is a dataframe then extract the values from that
+    if isinstance(y_true, pd.DataFrame) == True:
+        y_true = y_true.values
+    
+    f1score_list = []
+    for column in range(0,y_true.shape[1]):
+        score = fbeta_score(y_true[:,column],y_pred[:,column],beta,average='weighted')
+        f1score_list.append(score)
+        
+    f1score = np.asarray(f1score_list)
+    f1score = f1score[f1score<1]
+    
+    # Get the geometric mean of f1score
+    f1score = gmean(f1score)
+    return f1score
+
+def evaluate_pipeline(pipeline, X_test, Y_test, category_names):
+    """
+    Evaluate Model function
+    
+    This function applies a ML pipeline to a test set and prints out the model performance (accuracy and f1score)
+    
+    Arguments:
+        pipeline -> A valid scikit ML Pipeline
+        X_test -> Test features
+        Y_test -> Test labels
+        category_names -> label names (multi-output)
+    """
+    Y_pred = pipeline.predict(X_test)
+    
+    multi_f1 = multioutput_fscore(Y_test,Y_pred, beta = 1)
+    overall_accuracy = (Y_pred == Y_test).mean().mean()
+
+    print('Average overall accuracy {0:.2f}%'.format(overall_accuracy*100))
+    print('F1 score (custom definition) {0:.2f}%'.format(multi_f1*100))
+
+    # Print the whole classification report.
+    Y_pred = pd.DataFrame(Y_pred, columns = Y_test.columns)
+    
+    for column in Y_test.columns:
+        print('Model Performance with Category: {}'.format(column))
+        print(classification_report(Y_test[column],Y_pred[column]))
+
+
+def save_model_as_pickle(pipeline, pickle_filepath):
+    """
+    Save Pipeline function
+    
+    This function saves trained model as Pickle file, to be loaded later.
+    
+    Arguments:
+        pipeline -> GridSearchCV or Scikit Pipelin object
+        pickle_filepath -> destination path to save .pkl file
+    
+    """
+    pickle.dump(pipeline, open(pickle_filepath, 'wb'))
+
+def main():
+    """
+    Train Classifier Main function
+    
+    This function applies the Machine Learning Pipeline:
+        1) Extract data from SQLite db
+        2) Train ML model on training set
+        3) Estimate model performance on test set
+        4) Save trained model as Pickle
+    
+    """
+    if len(sys.argv) == 3:
+        database_filepath, pickle_filepath = sys.argv[1:]
+        print('Loading data from {} ...'.format(database_filepath))
+        X, Y, category_names = load_data(database_filepath)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        
+        print('Building the pipeline ...')
+        pipeline = build_pipeline()
+        
+        print('Training the pipeline ...')
+        pipeline.fit(X_train, Y_train)
+        
+        print('Evaluating model...')
+        evaluate_pipeline(pipeline, X_test, Y_test, category_names)
+
+        print('Saving pipeline to {} ...'.format(pickle_filepath))
+        save_model_as_pickle(pipeline, pickle_filepath)
+
+        print('Trained model saved!')
+
+    else:
+         print("Please provide the arguments correctly: \nSample Script Execution:\n\
+> python train_classifier.py ../data/disaster_response_db.db classifier.pkl \n\
+Arguments Description: \n\
+1) Path to SQLite destination database (e.g. disaster_response_db.db)\n\
+2) Path to pickle file name where ML model needs to be saved (e.g. classifier.pkl")
+
+if __name__ == '__main__':
+    main()
